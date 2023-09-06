@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="GOY8: Your Hub for Free Game Currencies, Downloads, and Exciting Giveaways. Fuel your gaming journey with free in-game currencies, downloads, and a chance to win amazing prizes!">
+    <meta name="keywords" content="GOY8, gaming, free game currencies, downloads, giveaways, gaming community">
+    <meta name="author" content="GOY8">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
+
+    <title>Home - GOY8</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    
+  </head>
+
+<body>
+<!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+  <style>
+    /* Cookie Notification Styles */
+    .cookie-notification {
+        position: fixed;
+        bottom: -100px; /* Start hidden below the screen */
+        left: 0;
+        width: 100%;
+        background-color: #0EA7A5;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        transition: bottom 0.5s ease-in-out; /* Add animation */
+        z-index: 9999;
+    }
+
+    .cookie-notification a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    /* Accept and Decline Button Styles */
+    .cookie-btn {
+        padding: 8px 20px;
+        margin: 10px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 30px;
+        font-weight: bold;
+        width: 25%;
+    }
+
+    #accept-cookies {
+        background-color: #1f2122;
+        color: #fff;
+    }
+
+    /* Notification Styles */
+    .notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #0EA7A5;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: none;
+        z-index: 9999;
+    }
+</style>
+<!-- Cookie Notification -->
+<div id="cookie-notification" class="cookie-notification">
+    <p style="color: #27292a">We use cookies to ensure you get the best experience on our site. <b><u style="color: white"><a href="terms.html">More Details</a></u></b></p>
+    <button id="accept-cookies" class="cookie-btn">Got It</button>
+</div>
+
+<!-- Notification when cookies are accepted -->
+<div id="accept-notification" class="notification">
+    Cookies accepted! Enjoy your browsing.
+</div>
+
+<script>
+    // Function to set a cookie
+    function setCookie(cookieName, cookieValue, expirationDays) {
+        const d = new Date();
+        d.setTime(d.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+        const expires = `expires=${d.toUTCString()}`;
+        document.cookie = `${cookieName}=${cookieValue}; ${expires}; path=/`;
+    }
+
+    // Function to hide the cookie notification
+    function hideCookieNotification() {
+        const cookieNotification = document.getElementById('cookie-notification');
+        cookieNotification.style.bottom = '-100px'; // Hide it below the screen
+    }
+
+    // Function to hide the entire cookie notification section
+    function hideCookieNotificationSection() {
+        const cookieNotification = document.getElementById('cookie-notification');
+        cookieNotification.style.display = 'none';
+    }
+
+    // Check if the user has previously accepted cookies
+    if (document.cookie.indexOf('cookiesAccepted=true') === -1) {
+        // Cookie has not been accepted, show the cookie notification
+        const cookieNotification = document.getElementById('cookie-notification');
+        cookieNotification.style.bottom = '0'; // Slide up from below the screen
+    } else {
+        // User has previously accepted cookies, hide the cookie notification section
+        hideCookieNotificationSection();
+    }
+
+    // Event listener for the accept button
+    document.getElementById('accept-cookies').addEventListener('click', () => {
+        setCookie('cookiesAccepted', 'true', 365); // Set a cookie to remember the choice
+        hideCookieNotification();
+
+        // Show the accept notification
+        const acceptNotification = document.getElementById('accept-notification');
+        acceptNotification.style.display = 'block';
+        setTimeout(() => {
+            acceptNotification.style.display = 'none'; // Hide it after 3 seconds
+        }, 3000);
+
+        // Hide the entire cookie notification section
+        hideCookieNotificationSection();
+    });
+</script>
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="logo">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                                 <!-- ***** Search End ***** -->
+            <div class="search-input">
+              <form id="search" action="#" name="search">
+                <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle">
+                   <i class="fa fa-search"></i>
+              </form>
+            </div><!-- ***** Search End ***** -->
+       <!-- ***** Menu Start ***** -->
+                   <ul class="nav">
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="Giveaways.html">Our Giveaways</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                         <li><a href="contact.html">Contact</a></li>
+ 
+                               </ul>    
+     <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                </nav>
+          <!-- ***** Menu End ***** -->
+                    </div></div></div>
+
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+           <div class="row">
+            <div class="col-lg-12">
+              <div class="main-profile" style="background-image: url()">
+                <div class="row">
+                  <div class="col-lg-12 align-self-center">
+                        <div class="main-info header-text">
+ <h2 style="text-decoration: line-through; color: #0EA7A5; margin-top: -40px; text-align: center; margin-bottom: 20px; font-size: 25px;">Welcome To GOY8</h2>
+                      <P style="font-size: 20px;"><B> Unlock elevated gaming at GOY8: Discover game downloads, in-game currencies, and endless gameplay potential</B></P><br>
+                            <p style="color: red;">Prior to proceeding, hit the Tuto video on every game page for a tutorial preview !!!</p><br>
+                  <div class="main-button">
+                    <a href="https://youtu.be/gvLFDKXy8B8?si=dqLWb5JguZ-nnP8U">Who we are</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Most Popular Start ***** -->
+         <div class="most-popular" id="most-popular">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="heading-section">
+                  <h4><em>Games</em> Currencies</h4>
+                </div>
+                <div class="row">
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="roblox.html">
+                      <img src="assets/images/popular-01.png" alt="Roblox logo">
+                        </a>
+                      <h4>Roblox Robux<br><span>Roblox Corporation</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.9</li>
+                        <li><i class="fa fa-check-circle"></i> 1.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="gtav.html">
+                      <img src="assets/images/popular-02.png" alt="gta5 logo">
+                        </a>
+                      <h4>GTA V Cash<br><span>Rockstar</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.8</li>
+                        <li><i class="fa fa-check-circle"></i> 1.25M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="fortnite.html">
+                      <img src="assets/images/popular-03.png" alt="fortnite  logo">
+                        </a>
+                      <h4>Fortnite V-bucks<br><span>Epic Games</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.7</li>
+                        <li><i class="fa fa-check-circle"></i> 1.1M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="pubg.html">
+                      <img src="assets/images/popular-04.png" alt="pubg logo">
+                        </a>
+                      <h4>PUBG Uc<br><span>Level Infinite</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.6</li>
+                        <li><i class="fa fa-check-circle"></i> 1.0M</li>
+                      </ul>
+                    </div>
+                  </div>
+                     <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="coinmaster.html">
+                      <img src="assets/images/popular-05.png" alt="coinmaster logo">
+                        </a>
+                      <h4>Coin Master Spins<br><span>Moon Active</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.5</li>
+                        <li><i class="fa fa-check-circle"></i> 2.3M</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="ff.html">
+                      <img src="assets/images/popular-06.png" alt="freefire logo">
+                        </a>
+                      <h4>FF Diamonds<br><span>Garena Int.</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.3</li>
+                        <li><i class="fa fa-check-circle"></i> 850K</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="fc24.html">
+                      <img src="assets/images/popular-07.png" alt="fc24 logo">
+                        </a>
+                      <h4>FC24 Coins<br><span>EA Sports</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.16</li>
+                        <li><i class="fa fa-check-circle"></i> 624K</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                    <div class="item">
+                        <a href="cr.html">
+                      <img src="assets/images/popular-08.png" alt="clashroyal logo">
+                        </a>
+                      <h4>Clash Royal Gems<br><span>Supercell</span></h4>
+                      <ul>
+                        <li><i class="fa fa-star"></i> 4.1</li>
+                        <li><i class="fa fa-check-circle"></i> 485K</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="main-button">
+    <style>
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0EA7A5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+    <script>
+        function copyLink() {
+            var link = "index.html"; // Change this to your link
+            var tempInput = document.createElement("input");
+            tempInput.value = window.location.origin + "/" + link;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Show notification
+            var notification = document.getElementById("notification");
+            notification.style.display = "block";
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 2000); // Hide after 2 seconds
+        }
+    </script>
+    <a href="javascript:void(0);" onclick="copyLink()">Share with friends</a>
+    
+    <!-- Notification element -->
+    <div id="notification" class="notification">
+        Link copied
+    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Most Popular End ***** -->
+
+          <!-- ***** Gaming Library Start ***** -->
+          <div class="gaming-library" id="games-section">
+            <div class="col-lg-12">
+              <div class="heading-section">
+                <h4><em>Games</em> Download</h4>
+             
+              </div>
+              <div class="item">
+                <ul>
+                  <li><img src="assets/images/game-01.png" alt="gta5 game" class="templatemo-item"></li>
+                  <li><h4>Grand Theft Auto V</h4><span>Rockstar</span></li>
+                  <li><h4>Date Added</h4><span>24/04/2023</span></li>
+                  <li><h4>Available For</h4><span>Android/Ios & Windows</span></li>
+                  <li><h4>Size</h4><span>2.8GB</span></li>
+                  <li><div class="main-border-button"><a href="GTAVdownload.html">Downlaod</a></div></li>
+                </ul>
+              </div>
+              <div class="item">
+                <ul>
+                  <li><img src="assets/images/game-02.png" alt="fortnite game" class="templatemo-item"></li>
+                  <li><h4>Fortnite</h4><span>Epic Games</span></li>
+                  <li><h4>Date Added</h4><span>22/06/2023</span></li>
+                  <li><h4>Available for</h4><span>Android/Ios & Windows</span></li>
+                  <li><h4>Size</h4><span>822MB</span></li>
+                  <li><div class="main-border-button"><a href="fortnitedownload.html">Download</a></div></li>
+                </ul>
+              </div>
+              <div class="item last-item">
+                <ul>
+                  <li><img src="assets/images/game-03.png" alt="fc24 game" class="templatemo-item"></li>
+                  <li><h4>FC24</h4><span>EA Sports</span></li>
+                  <li><h4>Date Added</h4><span>28/08/2023</span></li>
+                  <li><h4>Available For</h4><span>Android/Ios & Windows</span></li>
+                  <li><h4>Size</h4><span>445MB</span></li>
+                  <li><div class="main-border-button"><a href="FC24download.html">Download</a></div></li>
+                </ul>
+              </div>
+            </div>
+                 <div class="col-lg-12">
+                    <div class="main-button">
+    <style>
+        /* Notification Styles */
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0EA7A5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+    <script>
+        function copyLink() {
+            var link = "index.html"; // Change this to your link
+            var tempInput = document.createElement("input");
+            tempInput.value = window.location.origin + "/" + link;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            // Show notification
+            var notification = document.getElementById("notification");
+            notification.style.display = "block";
+            setTimeout(function() {
+                notification.style.display = "none";
+            }, 2000); // Hide after 2 seconds
+        }
+    </script>
+    <a href="javascript:void(0);" onclick="copyLink()">Share with friends</a>
+    
+    <!-- Notification element -->
+    <div id="notification" class="notification">
+        Link copied
+    </div>
+                     </div></div></div>
+          <div class="gaming-library">
+            <div class="col-lg-12">
+              <div class="heading-section">
+  <div class="footer">
+  	 <div class="container">
+  	 	<div class="row">
+  	 		<div class="footer-col">
+  	 			<h4>Details</h4>
+  	 			<ul>
+  	 				<li><a href="about.html">About Us</a></li>
+  	 				<li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="terms.html">Terms Of Services</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Resources</h4>
+  	 			<ul>
+  	 				<li><a href="#games-section">Games Download</a></li>
+  	 				<li><a href="#most-popular">Games Currencies</a></li>
+  	 				<li><a href="Giveaways.html">Our Giveaways</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links">
+  	 				<a href="https://www.facebook.com/profile.php?id=61550535968879&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://www.tiktok.com/@goy8_"><i class="fab fa-tiktok"></i></a>
+  	 				<a href="https://www.instagram.com/goy8__/"><i class="fab fa-instagram"></i></a>
+  	 				<a href="https://www.youtube.com/channel/UCR4hZcoQC5ZBBmEDy9alX3Q"><i class="fab fa-youtube"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+      </div>
+    </div>
+                </div></div></div></div></div></div></div></div></div>
+    <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2023 <a href="index.html">GOY8</a> Company. All rights reserved. 
+        </div>
+      </div>
+    </div>  
+    </footer>
+          
+          <!-- ***** Gaming Library End ***** -->
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+
+  </body>
+
+</html>
